@@ -39,13 +39,12 @@ gcloud run deploy "$SERVICE_NAME" \
   --region "$GCP_REGION" \
   --service-account "$SERVICE_ACCOUNT_EMAIL" \
   --set-env-vars="GCP_PROJECT=$GCP_PROJECT" \
-  --set-env-vars="INSTANCE_COUNT=2" \
   --allow-unauthenticated
 ```
 
 ### 4. Trigger the Service
 
-Once deployed, you can trigger the instance creation process by sending a POST request to the service's `/create` endpoint. The number at the end of the URL specifies how many instances to create *per zone*.
+Once deployed, you can trigger the instance creation process by sending a POST request to the service's `/create` endpoint. The number at the end of the URL specifies how many instances to create *in total*.
 
 ```bash
 # Example: Create 2 instances per zone in the ZONES_TO_TRY list
